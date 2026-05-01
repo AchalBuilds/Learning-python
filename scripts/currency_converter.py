@@ -10,6 +10,7 @@ while (amount < 0):
 converted_from = input("From (USD/INR):").upper()
 converted_to = input("To (USD/INR):").upper()
 
+
 print("Processing conversion... \n--------------------------")
 
 
