@@ -1,9 +1,9 @@
 
 rates = {
     "USD" : 1.0,
-    "INR" : 95.2,
+    "INR" : 94.84,
     "EUR" : 0.85,
-    "JPY" : 157.25,
+    "JPY" : 156.40,
     "RUB" : 75.0
          }
 
@@ -18,7 +18,14 @@ while amount <0 :
 from_cur = input("From (USD/INR/EUR/JPY/RUB): ").upper()
 to_cur = input("To (USD/INR/EUR/JPY/RUB): ").upper()
 
-if from_cur and to_cur in rates:
+print()
+
+if from_cur in rates and to_cur in rates:
     print("Processing conversion... \n--------------------------")
-    result = (amount/ rates[from_cur])* rates(to_cur)
-    print
+    result = round((amount/ rates[from_cur])* rates[to_cur], 2)
+    exchange_rate = round(rates[to_cur]/rates[from_cur], 2)
+    print(f"Starting: {amount} {from_cur}")
+    print(f"Exchange rate: {exchange_rate}") 
+    print(f"Result: {result} {to_cur}")
+else:
+    print("Invalid currency entered! Please check the codes.")
